@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 using LibraryManagement.Localization;
 using LibraryManagement.MultiTenancy;
 using Volo.Abp.Identity.Web.Navigation;
@@ -31,6 +32,20 @@ public class LibraryManagementMenuContributor : IMenuContributor
                 "~/",
                 icon: "fas fa-home",
                 order: 0
+            )
+        );
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                "Library",
+                l["Menu:Library"],
+                icon: "fa fa-book")
+            .AddItem(
+                new ApplicationMenuItem(
+                    "Library.Books",
+                    l["Menu:Books"],
+                    url: "/Books"
+                )
             )
         );
 
