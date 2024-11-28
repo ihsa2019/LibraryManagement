@@ -1,14 +1,14 @@
-﻿using System;
+﻿using LibraryManagement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LibraryManagement.Enums;
-using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.Application.Dtos;
 
-namespace LibraryManagement.Models
+namespace LibraryManagement.Dtos.Books
 {
-    public class Book : FullAuditedAggregateRoot<Guid>
+    public class BookDto : EntityDto<Guid>
     {
         public string Title { get; set; } // Book title
         public string Author { get; set; } // Author name
