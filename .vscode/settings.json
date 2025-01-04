@@ -1,3 +1,4 @@
 {
-    "omnisharp.sdkVersion": "9.0.101"
+    "omnisharp.sdkVersion": "9.0.101",
+    "csharp.preview.improvedLaunchExperience": true
 }
