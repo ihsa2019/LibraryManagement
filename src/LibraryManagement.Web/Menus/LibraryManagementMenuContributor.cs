@@ -34,6 +34,20 @@ public class LibraryManagementMenuContributor : IMenuContributor
             )
         );
 
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                    "Library",
+                    l["Menu:Library"],
+                    icon: "fas fa-book")
+                .AddItem(
+                    new ApplicationMenuItem(
+                        "Library.Books",
+                        l["Menu:Books"],
+                        url: "/Books"
+                    )
+                )
+            );
+
         if (MultiTenancyConsts.IsEnabled)
         {
             administration.SetSubItemOrder(TenantManagementMenuNames.GroupName, 1);
