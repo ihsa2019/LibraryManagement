@@ -1,5 +1,6 @@
 using System;
 using LibraryManagement.Dtos.Books;
+using LibraryManagement.Interfaces;
 using LibraryManagement.Models;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
@@ -13,7 +14,7 @@ public class BookAppService : CrudAppService<
     Guid,
     PagedAndSortedResultRequestDto,
     CreateBookDto,
-    UpdateBookDto>
+    UpdateBookDto>, IBookAppService
 {
     public BookAppService(IRepository<Book, Guid> repository) : base(repository)
     {
